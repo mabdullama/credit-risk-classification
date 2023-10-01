@@ -1,31 +1,30 @@
 # Module 12 Report Template
 
-## Overview of the Analysis
+# Credit Risk Classification Model Report
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
-
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
-
-## Results
-
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
-
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
+In this section, describe the analysis carried out for the machine learning models employed in this Challenge. This analysis includes:
 
 
+  A certain degree of risk is inherent in the lending industry, representing an inherent cost of conducting business within this field. Some loans will inevitably be repaid, while others will not. So, the more proficient a lending company becomes in evaluating a borrower's risk, the greater its potential for profitability and the lower its susceptibility to financial instability.
 
-* Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+  But, when dealing with extensive datasets, detecing patterns and assessing risk can be a challenging. An efficient classification model can find these patterns, limiy unpredictability, reduce risk exposure, and ensure a higher likelihood of achieving profitability.
+
+## Model Results
+
+Two Logistic Regression models were created the first one fitted with the original data,a dn the second one with resampled scaled data.
+
+* The Logistic Regression model fitted with the Original data DataSet predicted the following:
+  * Accuracy: 99% of the predictions made by the model were correct, using the original data reserved to test the model.
+  * Precision: This model has 100% rate for detecting false positives among loans which do not default. However, it is less precise amont defaulting loans at only 88%.
+  * Recal: The model captures positive instances effectively, capturing 89% of loans about to default, and 100% of loans which do not.
+
+* The Logistic Regression model fitted with the Resampled scaled data DataSet predicted the following:
+  * Accuracy: 100% of the predictions made by the model were correct, using the original data reserved to test the model.
+  * Precision: This model has 100% rate for detecting false positives among loans which do not default. However, it is less precise amont defaulting loans at only 93%.
+  * Recal: The model captures positive instances effectively, capturing 87% of loans about to default, and 100% of loans which do not.
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+* The Logistic Regression model fitted with OverSampled data performed much better than the model fitted with Original data due to the data being balanced and generating a higher accuracy score and a higher recall, indicating that the model will make extremely fewer mistakes when classifying non-healthy loans.
 
-If you do not recommend any of the models, please justify your reasoning.
+* I would highly recommend using the OverSampled model to determine riskiness of loans in the future.The lending company would most likely want fewer False Positives due to the high possibility of a lender loosing provided funds when classifying non-healthy loans as healthy. 
